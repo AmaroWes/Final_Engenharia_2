@@ -2,7 +2,7 @@ from pkg_resources import ensure_directory
 from juridica import Juridica
 from fisica import Fisica
 
-class Pessoa:
+class Pessoa(Juridica, Fisica):
     def __init__(self, nome, endereco, idade, registro):
         self.nome = nome
         self.endereco = endereco
@@ -10,11 +10,12 @@ class Pessoa:
         self.registro = registro
 
         if self.registro == 14:
-            self.pessoa = Juridica(self.nome, self.endereco, self.idade, self.registro)
+            Juridica.__init__(self, self.nome, self.endereco, self.registro, self.idade)
+            self.pessoa = self.view()
         else:
-            self.pessoa = Fisica(self.nome, self.endereco, self.idade, self.registro)
+            Fisica.__init__(self, self.nome, self.endereco, self.registro, self.idade)
+            self.pessoa = self.view()
 
     def __str__(self):
-        out_put = self.pessoa.view()
-        return out_put
+        return self.pessoa
 
