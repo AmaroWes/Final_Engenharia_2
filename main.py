@@ -1,5 +1,4 @@
-from juridica import Juridica
-from fisica import Fisica
+from pessoa import Pessoa
 
 
 if __name__ == "__main__":
@@ -11,12 +10,13 @@ if __name__ == "__main__":
 
         verificador_conversor = int(registro)
 
-        if len(registro) == 14:
-            user = Juridica(nome, endereco, registro, idade)
+        print("\nCarregando!\n")
+
+        if len(registro) == 14 or len(registro) == 11:
+            user = Pessoa(nome, endereco, registro, idade)
+            print("Os seus dados são.....\n")
             print(user)
-        elif len(registro) == 11:
-            user = Fisica(nome, endereco, registro, idade)
-            print(user)
+            print("\nFinalizando sistema.....\n")
         else:
             print("Valor passado de CPF/CNPJ não é válido!\n")
 
