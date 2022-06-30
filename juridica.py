@@ -10,4 +10,4 @@ class Juridica:
         return dados
     
     def view(self):
-        return f"Nome: {self.nome} \nIdade: {self.idade} \nCPF: {self.cpf} \nEndereço: {self.endereco}"
+        return f"Nome: {self.nome} \nIdade: {self.idade} \nCNPJ: {self.cnpj} \nEndereço: {self.endereco}"
