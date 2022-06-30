@@ -6,5 +6,8 @@ class Juridica:
         self.idade = idade
 
     def __str__(self):
-        dados = f"Nome: {self.nome} \nIdade: {self.idade} \nCNPJ: {self.cnpj} \nEndereço: {self.endereco}"
+        dados = self.view()
         return dados
+    
+    def view(self):
+        return f"Nome: {self.nome} \nIdade: {self.idade} \nCPF: {self.cpf} \nEndereço: {self.endereco}"
